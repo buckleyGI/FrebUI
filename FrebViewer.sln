@@ -1,0 +1,20 @@
+
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{F6ED3B0D-D8C9-47F7-BF01-BB7C4B6B80CB}") = "FREBUI", "FrebViewer.csproj", "{96D6846C-011D-4BC6-A4B5-C58F87E4F628}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{96D6846C-011D-4BC6-A4B5-C58F87E4F628}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96D6846C-011D-4BC6-A4B5-C58F87E4F628}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96D6846C-011D-4BC6-A4B5-C58F87E4F628}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96D6846C-011D-4BC6-A4B5-C58F87E4F628}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
