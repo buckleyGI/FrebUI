@@ -112,13 +112,13 @@ namespace FREBUI
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Something bad happened. Please report it to rakkim@microsoft.com. Message : " +
+                    MessageBox.Show("Something bad happened. Message : " +
                                     ex.Message + " Stack : " + ex.StackTrace);
                 }
             }
         }
 
-        private void GetDetailsFromFREBFile(string fileName, out string url, out string verb, out string appPool,
+        internal void GetDetailsFromFREBFile(string fileName, out string url, out string verb, out string appPool,
             out string statusCode, out int timeTaken, out string created, out string userAgent, out bool headless,
             out string remote, out string response, out string processId, out string remoteUserName,
             out string userName, out string authenticationType, out string failureReason, out string triggerStatusCode,
@@ -173,7 +173,7 @@ namespace FREBUI
                     "/*[local-name() = 'failedRequest']/*[local-name() = 'Event']/*[local-name() = 'System']/*[local-name() = 'TimeCreated']");
                 created = xmlNode2.Attributes["SystemTime"].Value;
 
-                userAgent = Regex.Match(xmlDocument.InnerText, "(?i)user-agent: .*").ToString();
+                userAgent = Regex.Match(xmlDocument.InnerText, "(?i)user-agent: .*").ToString().Replace("\r", "").Replace("\n", "");
                 remote = Regex.Match(xmlDocument.InnerXml, @"(?i)<Data Name=""RemoteAddress"">(.*?)</Data>").Groups[1]
                     .ToString();
                 // + ":" +  Regex.Match(xmlDocument.InnerXml,@"(?i)<Data Name=""RemotePort"">(.*?)</Data>").Groups[1].ToString();
@@ -237,13 +237,13 @@ namespace FREBUI
                     }
                     else
                     {
-                        MessageBox.Show("Something bad happened. Please report it to rakkim@microsoft.com. Message : " +
+                        MessageBox.Show("Something bad happened. Message : " +
                                         ex1.Message + " Stack : " + ex1.StackTrace);
                     }
                 }
                 catch (Exception ex2)
                 {
-                    MessageBox.Show("Something bad happened. Please report it to rakkim@microsoft.com. Message : " +
+                    MessageBox.Show("Something bad happened. Message : " +
                                     ex2.Message + " Stack : " + ex2.StackTrace);
                 }
             }
