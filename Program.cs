@@ -115,7 +115,7 @@ namespace FREBUI
                 var servererrorsbyfrebCsvRaw = $@"c:\temp\ServerErrorsE2E_{stamp}_Raw.csv";
                 
                 string sep = "|";
-                string header = $"sep={sep}\r\nstatus{sep}endpoint{sep}userName{sep}fullUrl{sep}createdLcl{sep}createdUtc{sep}failureReason{sep}milliseconds{sep}response{sep}authenticationType{sep}userAgent{sep}verb{sep}appPool{sep}processId{sep}server{sep}file\r\n";
+                string header = $"sep={sep}\r\nstatus{sep}headless{sep}endpoint{sep}userName{sep}fullUrl{sep}createdLcl{sep}createdUtc{sep}failureReason{sep}milliseconds{sep}response{sep}authenticationType{sep}userAgent{sep}verb{sep}appPool{sep}processId{sep}server{sep}file\r\n";
                 File.AppendAllText(servererrorsbyfrebCsvFiltered,header);
                 File.AppendAllText(servererrorsbyfrebCsvRaw,header);
                 
@@ -162,7 +162,7 @@ namespace FREBUI
                     response = response.Replace("\r", "").Replace("\n", "");
 
                     var server = Environment.MachineName;
-                    var dataTemplate = $"{triggerStatusCode}{sep}{lastSegment}{sep}{userName}{sep}{url}{sep}{createdLcl}{sep}{created}{sep}{failureReason}{sep}{timeTaken}{sep}{response}{sep}{authenticationType}{sep}{userAgent}{sep}{verb}{sep}{appPool}{sep}{processId}{sep}{server}{sep}{filePotentialUnzipped}\r\n";
+                    var dataTemplate = $"{triggerStatusCode}{sep}{headless}{sep}{lastSegment}{sep}{userName}{sep}{url}{sep}{createdLcl}{sep}{created}{sep}{failureReason}{sep}{timeTaken}{sep}{response}{sep}{authenticationType}{sep}{userAgent}{sep}{verb}{sep}{appPool}{sep}{processId}{sep}{server}{sep}{filePotentialUnzipped}\r\n";
 
                     File.AppendAllText(servererrorsbyfrebCsvRaw,dataTemplate);
 
