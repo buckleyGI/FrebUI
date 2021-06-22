@@ -109,8 +109,10 @@ namespace FREBUI
                     .Where(file => file.ToLower().EndsWith("xml") || file.ToLower().EndsWith("7z"))
                     .ToArray();
 
-                var servererrorsbyfrebCsvFiltered = $@"c:\temp\ServerErrorsE2E_Filtered_{DateTime.Now.ToString("s").Replace(":","")}.csv";
-                var servererrorsbyfrebCsvRaw = $@"c:\temp\ServerErrorsE2E_Raw_{DateTime.Now.ToString("s").Replace(":","")}.csv";
+                var stamp = DateTime.Now.ToString("s").Replace(":","");
+
+                var servererrorsbyfrebCsvFiltered = $@"c:\temp\ServerErrorsE2E_{stamp}_Filtered.csv";
+                var servererrorsbyfrebCsvRaw = $@"c:\temp\ServerErrorsE2E_{stamp}_Raw.csv";
                 
                 string sep = "|";
                 string header = $"sep={sep}\r\nstatus{sep}endpoint{sep}userName{sep}fullUrl{sep}createdLcl{sep}createdUtc{sep}failureReason{sep}milliseconds{sep}response{sep}authenticationType{sep}userAgent{sep}verb{sep}appPool{sep}processId{sep}server{sep}file\r\n";
